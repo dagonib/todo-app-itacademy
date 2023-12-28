@@ -14,8 +14,7 @@ class TaskList {
   }
 
   deleteTask(id: string): void {
-    const index = this.tasks.findIndex((task) => task.getId() === id);
-    if (index !== -1) this.tasks.splice(index, 1);
+    this.tasks = this.tasks.filter((task) => task.getId() !== id);
   }
 
   getTasks(): Task[] {

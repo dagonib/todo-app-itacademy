@@ -1,20 +1,15 @@
 import { randomUUID } from 'crypto';
-
-interface TaskInterface {
-  description: string;
-  completed: boolean;
-  id: string;
-}
+import { TaskInterface } from './task-interface';
 
 class Task implements TaskInterface {
   description: string;
   completed: boolean;
-  id: string;
+  taskId: string;
 
   constructor(description: string) {
     this.description = description;
     this.completed = false;
-    this.id = randomUUID();
+    this.taskId = randomUUID();
   }
 
   getDescription(): string {
@@ -22,7 +17,7 @@ class Task implements TaskInterface {
   }
 
   getId(): string {
-    return this.id;
+    return this.taskId;
   }
 
   isCompleted(): boolean {

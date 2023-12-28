@@ -1,4 +1,4 @@
-import TaskList from '../src/taskList';
+import TaskList from '../src/task-list';
 
 test('TaskList should be add a task', () => {
   const taskList = new TaskList();
@@ -22,6 +22,8 @@ test('should delete the task with the send id', () => {
   const taskList = new TaskList();
   const taskA = taskList.addTask('Task A');
   const id = taskA.getId();
+  const task = taskList.getTaskById(id);
+  console.log(task);
   expect(taskList.getTaskById(id)).toBeDefined();
   taskList.deleteTask(id);
   expect(taskList.getTaskById(id)).toBeUndefined();
