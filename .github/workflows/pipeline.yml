@@ -9,13 +9,21 @@ jobs:
   deploy:
     runs-on: windows-latest
     steps:
+      # Traer el último commit.
       - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
+      # Instalar node.
       - uses: actions/setup-node@v4.0.1
         with: 
           node-version: 18
+      # Instalación de dependencias
       - name: Install dependencies
-        run: npm install
-            
+        run: npm install --no-audit --no-fund --no-optional
+      # Ejecutar el Jest.
+      - name: Jest
+        run: npm run test
+      # Ejecutar el test.
+      - name: Test
+        run: npm test
             

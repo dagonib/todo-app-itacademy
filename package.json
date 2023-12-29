@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest",
+    "test": "jest",
     "prettier-format": "npx prettier --config .prettierrc src/**/*.ts --write",
-    "dev:watcher": "npx nodemon --watch src/**/*.ts --exec ts-node src/index.ts",
+    "dev:watcher": "npx nodemon --watch src/**/*.ts --exec ts-node src/task-list.ts",
     "test:watch": "jest --forceExit --watchAll",
     "dev:run": "npx ts-node src/index.ts",
     "build": "npx tsc"
